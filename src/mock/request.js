@@ -7,7 +7,7 @@ module.exports = {
                     resolve({
                         name:'app模块'
                     });
-                },100);
+                },500);
             }else{
                 reject('划擦了');
             }

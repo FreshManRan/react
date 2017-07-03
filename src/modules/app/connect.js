@@ -5,6 +5,7 @@ import * as constant from './constant';
 import * as actions from './actions';
 let mapStateToProps = (props) => {
     let nextProps = Object.assign({},props[constant.NAME]);
+    console.log(nextProps.name)
     return {
         name:nextProps.name
     };
