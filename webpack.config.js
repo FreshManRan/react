@@ -1,17 +1,15 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackDevServer = require('webpack-dev-server');
-
 module.exports = (env) =>{
-    let _publicPath = env === 'dev' ? '' : '/dist/';
     return {
         entry:{
             app:__dirname + '/src/index.jsx',
-            vendor:['react','react-dom']
+            vendor:['react','react-dom','prop-types','redux','react-redux','react-router-dom','babel-polyfill'],
         },
         output:{
             path:__dirname + '/dist/',
-            publicPath:_publicPath,
+            publicPath:'',
             filename:'js/[name].js'
         },
         module:{
@@ -21,10 +19,16 @@ module.exports = (env) =>{
                     loader: 'babel-loader',
                     exclude: /node_modules/,
                     query: {
-                        presets: ['react']
+                        presets: ['es2015','stage-0','react']
                     }
                 }
             ]
+        },
+        resolve: {
+            extensions:['.js', '.jsx', '.json', '.scss', '.css'],
+            alias:{
+                'mockRequest': __dirname + '/src/mock/request.js',
+            }
         },
         devServer:{
             historyApiFallback:true,
