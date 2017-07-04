@@ -11,6 +11,7 @@ export default (() => {
             return fn.apply(self,args.concat(nextArgs));
         }
     };
+    //before-after:暂时没有加入this(上下文)处理
     Function.prototype.before = function(fnc){
         let fn = this;
         return function(){
@@ -70,5 +71,6 @@ export default (() => {
                 break;
             }
         }
-    }
+    };
+
 })();
