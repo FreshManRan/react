@@ -5,7 +5,7 @@ module.exports = (env) =>{
     return {
         entry:{
             app:__dirname + '/src/index.jsx',
-            vendor:['react','react-dom','prop-types','redux','react-redux','react-router-dom','babel-polyfill'],
+            vendor:['babel-polyfill','react','react-dom','prop-types','redux','react-redux','react-router-dom','react-router-redux'],
         },
         output:{
             path:__dirname + '/dist/',
