@@ -9,5 +9,4 @@ export default function* init(action){
         type:actions.normal.init,
         data:data
     });
-    
 }

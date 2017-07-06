@@ -1,6 +1,6 @@
-//create 17,06,30 lc
-import * as actions from './actions'
-export default (state = {}, action) => {
+//create 17,07,06 lc
+import * as actions from './actions';
+export default (state={},action) => {
     let nextState = Object.assign({},state);
     switch(action.type){
         

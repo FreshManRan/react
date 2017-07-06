@@ -1,11 +1,10 @@
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackDevServer = require('webpack-dev-server');
+let getPlugins = require('./webpack/plugins');
 module.exports = (env) =>{
+    let dev = env === 'dev';
     return {
         entry:{
             app:__dirname + '/src/index.jsx',
-            vendor:['babel-polyfill','react','react-dom','prop-types','redux','react-redux','react-router-dom','react-router-redux'],
+            vendor:['babel-polyfill','react','react-dom','prop-types','redux','react-redux','redux-saga','react-router-dom'],
         },
         output:{
             path:__dirname + '/dist/',
@@ -28,24 +27,12 @@ module.exports = (env) =>{
             extensions:['.js', '.jsx', '.json', '.scss', '.css'],
             alias:{
                 'mockRequest': __dirname + '/src/mock/request.js',
+                'core': __dirname + '/src/core/index.js',
             }
         },
         devServer:{
-            historyApiFallback:true,
-            hot:true,
-            inline:true,
+            historyApiFallback:true,//在开发单页应用时非常有用，它依赖于HTML5 history API，如果设置为true，所有的跳转将指向index.html
         },
-        plugins:[
-            new HtmlWebpackPlugin({
-                title:'react',
-                template:__dirname + '/html/index.html',
-                filename:'index.html',
-                hash:true,
-                inject:'body',
-                chunks:['vendor','app'],
-            }),
-            new webpack.optimize.CommonsChunkPlugin('vendor'),
-            new webpack.HotModuleReplacementPlugin()
-        ],
+        plugins:getPlugins(dev,__dirname),
     }
 }
