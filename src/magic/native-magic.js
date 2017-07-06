@@ -67,7 +67,7 @@ export default (() => {
         }
         let arr = this;
         for (let i = 0,len = arr.length; i < len; i++){
-            if(fnc(arr[i]) === false){
+            if(fnc(arr[i],i) === false){
                 break;
             }
         }
