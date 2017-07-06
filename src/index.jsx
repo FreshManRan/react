@@ -13,13 +13,15 @@ import * as User from './modules/user';
 import * as Home from './modules/home';
 //初始化渲染
 (function(modules){
+    if(!modules.length){
+        return alert('划擦了吧！惊喜不！意外不！');
+    }
     let store = core.createStore(modules);
     ReactDOM.render(
         <Provider store = {store}>
             <BrowserRouter>
                 <Route path='/' component = {App.Component}/>
             </BrowserRouter>
-        
         </Provider>,
         document.getElementById('app-container')
     );
