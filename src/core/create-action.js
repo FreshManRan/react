@@ -1,9 +1,9 @@
-export default (type,module,action) => {
+export default (type,moduleName,action) => {
    switch (type){
         case 'effect':
-            return '##_' + module + '_EFFECT_' + action;
+            return '##_' + moduleName + '_EFFECT_' + action;
         case 'normal':
-            return '&&_' + module + '_NORMAL_' + action;
+            return '&&_' + moduleName + '_NORMAL_' + action;
    }
    return action;
 }

@@ -1,3 +1,4 @@
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 let getPlugins = require('./webpack/plugins');
 module.exports = (env) =>{
     let dev = env === 'dev';
@@ -20,11 +21,18 @@ module.exports = (env) =>{
                     query: {
                         presets: ['es2015','stage-0','react']
                     }
+                },
+                {
+                    test:/\.scss?$/,
+                    loader:ExtractTextPlugin.extract({
+                        fallback:"style-loader",
+                        use:"css-loader!sass-loader",
+                    })
                 }
             ]
         },
         resolve: {
-            extensions:['.js', '.jsx', '.json', '.scss', '.css'],
+            extensions:['.js', '.jsx', '.scss', '.css'],
             alias:{
                 'mockRequest': __dirname + '/src/mock/request.js',
                 'core': __dirname + '/src/core/index.js',

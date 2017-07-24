@@ -1,4 +1,5 @@
 //create 17,06,30 lc
+require('../scss/index.scss');
 //引入魔法
 import nativeMagic from './magic/native-magic';
 import * as React from 'react';
@@ -13,9 +14,6 @@ import * as User from './modules/user';
 import * as Home from './modules/home';
 //初始化渲染
 (function(modules){
-    if(!modules.length){
-        return alert('划擦了吧！惊喜不！意外不！');
-    }
     let store = core.createStore(modules);
     ReactDOM.render(
         <Provider store = {store}>
@@ -23,6 +21,6 @@ import * as Home from './modules/home';
                 <Route path='/' component = {App.Component}/>
             </BrowserRouter>
         </Provider>,
-        document.getElementById('app-container')
+        document.getElementById('node-container')
     );
 })([App, Detail, User, Home]);

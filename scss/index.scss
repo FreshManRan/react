@@ -1,0 +1,74 @@
+//create 2017,07,06 lc
+@charset "utf-8";
+$fontFamily:"Microsoft YaHei","SimHei","SimSun";
+$fontSize:62.5%;
+/* CSS */
+body{
+    font-size:$fontSize;
+    font-family:$fontFamily;
+    position: relative;
+    overflow: hidden;
+    color: #333333;
+}
+/*css-reset*/
+html,body,div,ul,ol,li,dl,dt,dd,p,span,em,strong,b,i,h1,h2,h3,h4,form,input,button,textarea,select,option,img,a{ 
+    cursor: default;
+    margin:0; 
+    padding:0; 
+    word-break:break-all;
+}
+img{ display:block; border:0}
+a{ 
+    text-decoration:none; 
+    outline:none; 
+    color:inherit; 
+    cursor: pointer;
+    &:hover{
+        text-decoration:none
+    }
+}
+ul,ol,li{ 
+    display:block; 
+    list-style:none;
+}
+textarea{
+    resize: none;
+    outline: none;
+}
+input{
+    outline: none;
+    font-size:inherit; 
+    line-height:inherit; 
+    color:inherit; 
+    font-family:inherit;
+}
+::-webkit-input-placeholder {
+    color:#e3e3e3;
+}
+/*clearfix-浮动清理*/
+.clearfix:after{ 
+    content:"."; 
+    display:block; 
+    height:0; 
+    clear:both; 
+    visibility:hidden;
+ }
+.clearfix{ display:inline-block }
+.clearfix{ display:block}
+/*公用浮动*/
+.fl{ float:left}
+.fr{ float:right}
+/*公共属性css*/
+.null{ 
+    display:block; 
+    overflow:hidden; 
+    font-size:0; 
+    line-height:0; 
+    text-indent:-999px;
+}
+.none{ display:none}
+/*
+    引入模块scss
+*/
+@import './widgets/index.scss';
+@import './app/index.scss';

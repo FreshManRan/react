@@ -3,19 +3,18 @@ import {connect} from 'react-redux';
 import {Component} from './components';
 import * as constant from './constant';
 import * as actions from './actions';
-let mapStateToProps = (props) => {
-    let nextProps = Object.assign({},props[constant.NAME]);
+let mapStateToProps = (state,props) => {
+    let nextState = Object.assign({},state[constant.NAME]);
     return {
     };
 }
-let mapStateToDispatch = (dispatch) => {
-    return {
-        init:() => {
-            dispatch({
-                type:actions.effect.init
-            });
-        }
-    };
+let mapStateToDispatch = (dispatch,props) => {
+    let doDispatch = {};
+    //初始化
+    doDispatch['tryInit'] = () => (dispatch({
+        type:actions.effect.init
+    }));
+    return doDispatch;
 }
 
 export default connect(mapStateToProps,mapStateToDispatch)(Component);
