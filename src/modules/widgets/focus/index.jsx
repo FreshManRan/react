@@ -3,13 +3,13 @@ import * as React from 'react';
 class Component extends React.PureComponent{
     render(){
         return (
-            <div className='widget-focus'>
+            <ul className='widget-focus'>
                 {
                     this.props.children.map((v)=>{
-                        return v.props.children;
+                        return v;
                     })
                 }
-            </div>
+            </ul>
         );
     }
 }

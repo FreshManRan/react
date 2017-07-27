@@ -7,10 +7,10 @@ class Component extends React.PureComponent{
             <article>
                 我是主页页面
                 <Widgets.Focus>
-                    <li href='xxx'><img src='xxx'/></li>
+                    <li>1111111111</li>
                     <li>222222222</li>
-                    <li>33333333333</li>
-                    <li>44444444444</li>
+                    <li>333333333</li>
+                    <li>4444444444444</li>
                 </Widgets.Focus>
 
             </article>
