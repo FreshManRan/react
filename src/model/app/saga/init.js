@@ -1,9 +1,10 @@
 import { take, put, call } from 'redux-saga/effects';
-import * as Actions from '../actions';
-export default function* init(action){
-    
+import * as action from '../action';
+import mockRequest from 'mockRequest';
+export default function* init(){
+    let data = yield mockRequest.appInit();
     yield put({
-        type : Actions.CHANGE_INIT,
-        data:111
+        type : action.CHANGE_INIT,
+        data:data
     });
 }

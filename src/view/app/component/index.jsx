@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-class App extends React.Component {
-    componentDidMount(){
+class Component extends React.Component {
+    componentWillMount(){
         this.props.init();
     }
     render(){
@@ -12,4 +12,4 @@ class App extends React.Component {
     }
 }
 
-export {App}
+export default Component;

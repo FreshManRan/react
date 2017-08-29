@@ -1,5 +1,5 @@
 import * as constants from './constants';
-import * as components from './components';
+import * as component from './component';
 import connectComponent from './connect';
 
-export {components,connectComponent,constants}
+export {component,connectComponent,constants}

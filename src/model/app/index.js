@@ -1,6 +1,6 @@
 import * as constants from './constants';
 import reducer from './reducer';
-import * as actions from './actions';
+import * as action from './action';
 import watchAction from './watch-action';
 
-export {constants,reducer,actions,watchAction}
+export {constants,reducer,action,watchAction}

@@ -1,6 +1,6 @@
 import {takeEvery} from 'redux-saga';
-import * as actions from './actions';
+import * as action from './action';
 import * as saga from './saga';
 export default function* watchAction(){
-    yield takeEvery(actions.SAGA_INIT,saga.Init);
+    yield takeEvery(action.SAGA_INIT,saga.Init);
 }

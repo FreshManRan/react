@@ -1,20 +1,20 @@
 import {connect} from 'react-redux';
-import * as components from './components';
-import * as actions from './actions';
+import component from './component';
+import * as action from './action';
 
 let mapStateToProps = (state,props) => {
     return {
-
+        name : state.APP.name
     }
 }
-let mapStateToDispatch = (dispatch,props) => {
+let mapStateToDispatch = (dispatch) => {
     return {
         init:() => {
             dispatch({
-                type:actions.SAGA_INIT
+                type:action.SAGA_INIT
             })
         }
     }
 }
 
-export default connect(mapStateToProps,mapStateToDispatch)(components.App);
+export default connect(mapStateToProps,mapStateToDispatch)(component);
