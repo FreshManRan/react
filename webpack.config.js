@@ -34,8 +34,10 @@ module.exports = (env) =>{
         resolve: {
             extensions:['.js', '.jsx', '.scss', '.css'],
             alias:{
-                'mockRequest': __dirname + '/src/mock/request.js',
+                'mockRequest': __dirname + '/src/mock/request-api.js',
                 'core': __dirname + '/src/core/index.js',
+                'model': __dirname + '/src/model/index.js',
+                'view': __dirname + '/src/view/index.js',
             }
         },
         devServer:{

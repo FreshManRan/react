@@ -1,8 +1,6 @@
-//create 17,07,04 lc
-export default (sageMiddleware,modules) => {
-    modules.forEach((v) => {
-        if(v.watchAction){
-            sageMiddleware.run(v.watchAction);
-        }
-    })
+export default (sagaMiddleware,models) => {
+    models.forEach((v) => {
+        if(!v.watchAction){return}
+        sagaMiddleware.run(v.watchAction);
+    });
 }

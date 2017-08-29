@@ -1,6 +1,4 @@
+import {changeAction, sagaAction} from './create-action';
 import createStore from './create-store';
-import createAction from './create-action';
 
-module.exports = {
-    createStore, createAction
-}
+export default {createStore, changeAction, sagaAction}
