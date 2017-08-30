@@ -6,8 +6,9 @@ class Component extends React.Component {
         this.props.init();
     }
     render(){
+        let {name} = this.props;
         return (
-            <div>这里是App-view</div>
+            <div>这里是{name}</div>
         )
     }
 }

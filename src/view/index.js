@@ -1,3 +1,3 @@
-import * as App from './app';
+import * as container from './container';
 
-export default {App}
+export default {container}

@@ -11,10 +11,10 @@ import view from 'view';
 
 ((model) => {
     let store = core.createStore(model)
-    let AppComponent = view.App.connectComponent;
+    let ContainerComponent = view.container.connectComponent;
     ReactDOM.render(
         <Provider store = {store}>
-            <AppComponent/>
+            <ContainerComponent/>
         </Provider>,
         document.getElementById('app-container')
     )

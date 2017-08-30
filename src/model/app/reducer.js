@@ -1,9 +1,9 @@
-import * as action from './action';
-export default (state = null,params) => {
+import * as Action from './action';
+export default (state = null,action) => {
     let nextState = Object.assign({},state);
-   switch(params.type){
-       case action.CHANGE_INIT:
-            nextState.name = params.data.name;
+   switch(action.type){
+       case Action.CHANGE_INIT:
+            nextState.name = action.data.name;
         break; 
    }
     return nextState;
